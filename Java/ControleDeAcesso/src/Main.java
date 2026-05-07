@@ -93,7 +93,7 @@ public class Main {
             System.out.println("Login falhou! Credenciais incorretas.");
         }
     }
-
+    // Nessa funcão retorna o indice i, esse indice retornado nos outros vetores corresponde ao usuario que foi retornado também
     public static int autenticarUsuario(String email, String senha) {
         // Esse base64 serve para transformar a senha digitada em uma string 'codificada'
         String senhaCriptografada = Base64.getEncoder().encodeToString(senha.getBytes());
@@ -102,7 +102,7 @@ public class Main {
                 return i; // Retorna a "linha" onde o usuário foi encontrado
             }
         }
-        return -1; // Não encontrado
+        return -1; // Usuario não encontrado
     }
 
     public static void validarPermissao(int indiceUsuario, String area) {
