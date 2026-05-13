@@ -15,7 +15,31 @@ class Main{
 
             switch (opcao){
                 case 1:
+                    System.out.println("O que você deseja pedir?");
+                    System.out.println("[1] - Prato");
+                    System.out.println("[2] - Bebida");
+                    int opcaoProduto = scanner.nextInt();
+                    switch (opcaoProduto){
+                        case 1:
+                            boolean encontrouPrato = false;
+                            while(!encontrouPrato){
+                                System.out.println("Qual prato você quer?");
+                                String nomePrato = scanner.next();
+                                for(Produto prato : blendLunch.getCardapio()){
+                                    if(nomePrato.equalsIgnoreCase(prato.getNome())){
+                                        System.out.println("Prato "+nomePrato+" escolhido!");
+                                        encontrouPrato = true;
+                                        break;
+                                    }else{
+                                        System.out.println("Este prato não existe, escolha outro!");
+                                    }
+                                }
+                            }
+                            break;
+                        case 2:
 
+                            break;
+                    }
                     break;
                 case 2:
                     System.out.println("\n--- ÁREA DE CADASTROS ---");
@@ -74,6 +98,16 @@ class Main{
                                     blendLunch.cadastrarFuncionario(novoCozinheiro);
                                     break;
                                 case 3:
+                                    System.out.print("Nome: ");
+                                    String nomeGerente = scanner.nextLine();
+                                    System.out.print("CPF: ");
+                                    String cpfGerente = scanner.nextLine();
+                                    System.out.print("Salário Base: ");
+                                    double salarioGerente = scanner.nextDouble();
+                                    System.out.println("Senha de Acesso para o Gerente: ");
+                                    String senhaAcessoGerente = scanner.next();
+                                    Gerente novoGerente = new Gerente(nomeGerente, cpfGerente, salarioGerente, senhaAcessoGerente);
+                                    blendLunch.cadastrarFuncionario(novoGerente);
                                     break;
                             }
                             break;

@@ -5,9 +5,10 @@ public class Pedido {
     private Funcionario funcionario; // Associação: quem está atendendo
     private ArrayList<Produto> itens; // Lista de produtos pedidos
     private String status; // "Aberto", "Pronto", "Pago"
+    private static int contadorID = 1;
 
-    public Pedido(int idPedido, Funcionario funcionario) {
-        this.idPedido = idPedido;
+    public Pedido(Funcionario funcionario) {
+        this.idPedido = contadorID++;
         this.funcionario = funcionario;
         this.itens = new ArrayList<>(); // Inicializa a lista vazia
         this.status = "Aberto";
@@ -15,7 +16,7 @@ public class Pedido {
 
     public void adicionarPedido(Produto produto){
         this.itens.add(produto);
-        System.out.println("Pedido " + produto.getNome() + " adicionado ao pedido #" + idPedido);
+        System.out.println("Produto " + produto.getNome() + " adicionado ao pedido #" + idPedido);
     }
 
     public double calcularPrecoTotalPedido() {
