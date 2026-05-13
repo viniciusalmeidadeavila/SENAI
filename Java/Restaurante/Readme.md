@@ -1,4 +1,4 @@
-🍔 Blend Lunch - Sistema de Gestão de Restaurante
+# 🍔 Blend Lunch - Sistema de Gestão de Restaurante
 Bem-vindo ao Blend Lunch, um sistema de console desenvolvido em Java para gerenciar pedidos e cadastros de um restaurante de forma simples e eficiente.
 
 # 🚀 Funcionalidades
