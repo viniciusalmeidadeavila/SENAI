@@ -37,7 +37,20 @@ class Main{
                             }
                             break;
                         case 2:
-
+                            boolean encontrouBebida = false;
+                            while(!encontrouBebida) {
+                                System.out.println("Qual bebida você quer?");
+                                String nomeBebida = scanner.next();
+                                for (Produto bebida : blendLunch.getCardapio()) {
+                                    if (nomeBebida.equalsIgnoreCase(bebida.getNome())) {
+                                        System.out.println("bebida " + nomeBebida + " escolhida!");
+                                        encontrouBebida = true;
+                                        break;
+                                    } else {
+                                        System.out.println("Esta bebida não existe, escolha outro!");
+                                    }
+                                }
+                            }
                             break;
                     }
                     break;
@@ -61,7 +74,7 @@ class Main{
                             break;
                         case 2:
                             System.out.print("Nome da Bebida: ");
-                            String nomeBebida = scanner.nextLine();
+                            String nomeBebida = scanner.next();
                             System.out.print("Preço de Venda: ");
                             double precoBebida = scanner.nextDouble();
                             System.out.println("Volume (ML) da Bebida: ");
