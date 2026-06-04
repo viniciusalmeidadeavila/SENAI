@@ -59,7 +59,6 @@ public class Main {
                 case 3:
                     System.out.println("\n--- Cadastrar Novo Produto ---");
 
-                    // Passo 1: Listar as categorias pro usuário saber qual ID escolher
                     List<Categoria> catsDisponiveis = categoriaController.listarTodos();
                     if (catsDisponiveis.isEmpty()) {
                         System.out.println("[Erro] Você precisa cadastrar pelo menos uma categoria antes!");
@@ -75,7 +74,6 @@ public class Main {
                     int idCatEscolhida = scanner.nextInt();
                     scanner.nextLine(); // Limpa buffer
 
-                    // Criamos um objeto categoria temporário apenas com o ID digitado
                     Categoria catSelecionada = new Categoria();
                     catSelecionada.setId(idCatEscolhida);
 
