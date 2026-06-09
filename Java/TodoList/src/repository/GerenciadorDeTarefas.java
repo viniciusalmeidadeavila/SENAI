@@ -13,7 +13,6 @@ public class GerenciadorDeTarefas {
 
     // Método para Adicionar no Banco
     public boolean adicionarTarefa(String titulo) {
-        // Atualizado: titulo_tarefa e data_hora
         String sql = "INSERT INTO tarefas (id, titulo_tarefa, concluida, data_hora) VALUES (?, ?, ?, ?)";
         Tarefa novaTarefa = new Tarefa(titulo);
 
@@ -45,10 +44,8 @@ public class GerenciadorDeTarefas {
 
             while (rs.next()) {
                 String id = rs.getString("id");
-                // Atualizado para ler a coluna 'titulo_tarefa'
                 String titulo = rs.getString("titulo_tarefa");
                 boolean concluida = rs.getBoolean("concluida");
-                // Atualizado para ler a coluna 'data_hora'
                 LocalDateTime data = rs.getTimestamp("data_hora").toLocalDateTime();
 
                 Tarefa t = new Tarefa(id, titulo, concluida, data);
@@ -73,9 +70,7 @@ public class GerenciadorDeTarefas {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     String id = rs.getString("id");
-                    // Atualizado para ler a coluna 'titulo_tarefa'
                     String titulo = rs.getString("titulo_tarefa");
-                    // Atualizado para ler a coluna 'data_hora'
                     LocalDateTime data = rs.getTimestamp("data_hora").toLocalDateTime();
 
                     Tarefa t = new Tarefa(id, titulo, concluida, data);
@@ -109,7 +104,6 @@ public class GerenciadorDeTarefas {
 
     // Método para Editar Título no Banco
     public boolean editarTitulo(String id, String novoTitulo) {
-        // Atualizado para atualizar a coluna 'titulo_tarefa'
         String sql = "UPDATE tarefas SET titulo_tarefa = ? WHERE id = ?";
 
         try (Connection conn = ConexaoBanco.obterConexao();
