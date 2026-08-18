@@ -1,16 +1,17 @@
 package view;
 
+import controller.UsuarioController;
+import database.Conexao;
 import models.Usuario;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 class Main{
-    private static List<Usuario> bancoDeDadosFake = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        Conexao conexao = new Conexao();
+        UsuarioController controllerUsuario = new UsuarioController(conexao.conectar());
 
         int loop = -1;
         exibirTitulo();
@@ -22,9 +23,10 @@ class Main{
             int opcao = scanner.nextInt();
             switch (opcao){
                 case 1:
+                    fazerLogin(controllerUsuario);
                     break;
                 case 2:
-                    cadastrarUsuario();
+                    cadastrarUsuario(controllerUsuario);
                     break;
                 case 3:
                     break;
@@ -57,8 +59,7 @@ class Main{
         System.out.println("===============================================================================");
     }
 
-    public static void cadastrarUsuario() {
-
+    public static void cadastrarUsuario(UsuarioController controllerCadastro) {
         System.out.println("=======================================");
         System.out.println("         CADASTRO DE USUÁRIO           ");
         System.out.println("=======================================");
@@ -66,15 +67,30 @@ class Main{
         System.out.print("Digite o seu nome: ");
         String nome = scanner.next();
 
+        System.out.println("Digite seu email: ");
+        String email = scanner.next();
+
         System.out.print("Crie uma senha forte: ");
         String senha = scanner.next();
-
-        Usuario novoUsuario = new Usuario(nome, senha);
-
-        bancoDeDadosFake.add(novoUsuario);
-
-        System.out.println("\n[+] Usuario(a) " + novoUsuario.getNome() + " cadastrado(a) com sucesso!");
-        System.out.println("Total de usuarios no sistema: " + bancoDeDadosFake.size());
+        controllerCadastro.cadastrarUsuario(nome, email, senha);
+        System.out.println("\n[+] Usuario(a) " + nome + " cadastrado(a) com sucesso!");
         System.out.println("=======================================\n");
+    }
+
+    public static void fazerLogin(UsuarioController controllerLogin){
+        System.out.println("\n--- TELA DE LOGIN ---");
+        System.out.print("Digite seu email: ");
+        String emailLogin = scanner.next();
+        System.out.print("Digite sua senha: ");
+        String senhaLogin = scanner.next();
+        Usuario usuarioLogado = controllerLogin.fazerLogin(emailLogin, senhaLogin);
+        if (usuarioLogado != null) {
+            System.out.println("\n[+] Login realizado com sucesso!");
+            System.out.println("Bem-vindo(a) à Arena, " + usuarioLogado.getNome() + "!");
+            // Aqui você pode mudar o estado do jogo para o "Menu Principal" logado,
+            // onde o usuario escolhe o pet, entra no torneio, etc.
+        } else {
+            System.out.println("\n[-] Erro: Email ou senha incorretos.");
+        }
     }
 }
