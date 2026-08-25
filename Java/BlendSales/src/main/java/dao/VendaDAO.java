@@ -17,18 +17,15 @@ public class VendaDAO {
         try (Connection conn = Conexao.getConnection();
              PreparedStatement stmtVenda = conn.prepareStatement(sqlVenda, Statement.RETURN_GENERATED_KEYS)) {
 
-            // 1. Salva a Venda
             stmtVenda.setInt(1, idCliente);
             stmtVenda.setInt(2, idUsuario);
             stmtVenda.setInt(3, idFormaPagamento);
             stmtVenda.executeUpdate();
 
-            // 2. Pega o ID da Venda que acabou de ser criada
             ResultSet rs = stmtVenda.getGeneratedKeys();
             if (rs.next()) {
                 int idVendaGerado = rs.getInt(1);
 
-                // 3. Salva o Item da Venda
                 try (PreparedStatement stmtItem = conn.prepareStatement(sqlItem)) {
                     stmtItem.setInt(1, idVendaGerado);
                     stmtItem.setInt(2, idProduto);

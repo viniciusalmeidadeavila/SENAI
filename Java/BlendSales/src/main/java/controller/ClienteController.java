@@ -7,14 +7,12 @@ import models.Cliente;
 public class ClienteController {
 
     public void cadastrarCliente(String nome, String cpf) {
-        // Validação básica
         if (nome.trim().isEmpty() || cpf.trim().isEmpty()) {
             mostrarAlerta(Alert.AlertType.WARNING, "Atenção", "Preencha todos os campos!");
             return;
         }
 
         try {
-            // O ID é 0 pois o banco de dados (Auto Increment) gera sozinho
             Cliente novoCliente = new Cliente(0, nome, cpf);
 
             ClienteDAO dao = new ClienteDAO();

@@ -25,9 +25,6 @@ public class LoginController {
         // Criptografa a senha antes de mandar para o banco (DAO)
         String senhaCriptografada = SegurancaSenha.criptografar(senha);
 
-        // AQUI ENTRARIA O CÓDIGO DO DAO PARA SALVAR NO BANCO
-        // Exemplo: usuarioDAO.salvar(new Usuario(0, "Nome", login, senhaCriptografada));
-
         mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso!");
     }
 

@@ -5,7 +5,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class SegurancaSenha {
 
-    // Criptografa a senha
     public static String criptografar(String senha) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -20,9 +19,7 @@ public class SegurancaSenha {
         }
     }
 
-    // Valida se a senha atende aos requisitos
     public static boolean isSenhaValida(String senha) {
-        // Mínimo de 13 dígitos
         return senha != null && senha.length() >= 13;
     }
 }

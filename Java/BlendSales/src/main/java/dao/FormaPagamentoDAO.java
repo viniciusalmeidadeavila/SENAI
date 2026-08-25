@@ -9,7 +9,6 @@ import java.sql.SQLException;
 public class FormaPagamentoDAO {
 
     public void salvar(FormaPagamento formaPagamento) {
-        // Atenção para as crases ao redor do nome da tabela por causa do espaço!
         String sql = "INSERT INTO `forma pagamento` (descricao) VALUES (?)";
 
         try (Connection conn = Conexao.getConnection();

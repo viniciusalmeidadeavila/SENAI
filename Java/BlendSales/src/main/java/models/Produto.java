@@ -10,10 +10,10 @@ public class Produto {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
-        setEstoque(estoque); // Chama o setter para validar a regra do estoque
+        setEstoque(estoque);
     }
 
-    // Regra do trabalho: Estoque não pode ser negativo
+    // Estoque não pode ser negativo
     public void setEstoque(int estoque) {
         if (estoque < 0) {
             throw new IllegalArgumentException("O estoque não pode ser negativo! Produto não pode ser vendido.");

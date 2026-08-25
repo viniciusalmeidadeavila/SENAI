@@ -6,7 +6,6 @@ import models.Produto;
 
 public class ProdutoController {
 
-    // Agora o método recebe os textos direto da View
     public void cadastrarProduto(String nome, String precoStr, String estoqueStr) {
         try {
             double preco = Double.parseDouble(precoStr);
