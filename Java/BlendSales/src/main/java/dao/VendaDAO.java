@@ -11,8 +11,8 @@ import java.sql.Statement;
 public class VendaDAO {
 
     public void registrarVenda(int idCliente, int idUsuario, int idFormaPagamento, int idProduto, int quantidade) {
-        String sqlVenda = "INSERT INTO venda (id_cliente, id_usuario, id_forma_pagamento, data_venda) VALUES (?, ?, ?, NOW())";
-        String sqlItem = "INSERT INTO `item venda` (id_venda, id_produto, quantidade, preco_unitario) VALUES (?, ?, ?, 0.0)";
+        String sqlVenda = "INSERT INTO venda (cliente_id, usuario_id, forma_pagamento_id, data_venda, valor_total, status) VALUES (?, ?, ?, NOW(), 0.0, 'PENDENTE')";
+        String sqlItem = "INSERT INTO item_venda (venda_id, produto_id, quantidade, preco_unitario) VALUES (?, ?, ?, 0.0)";
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement stmtVenda = conn.prepareStatement(sqlVenda, Statement.RETURN_GENERATED_KEYS)) {

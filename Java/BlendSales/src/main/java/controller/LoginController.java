@@ -1,35 +1,36 @@
 package controller;
 
-import javafx.fxml.FXML;
+import dao.UsuarioDAO;
 import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import utils.SegurancaSenha;
 
 public class LoginController {
 
-    @FXML private TextField txtLogin;
-    @FXML private PasswordField txtSenha;
-
-    @FXML
-    public void cadastrarUsuario() {
-        String login = txtLogin.getText();
-        String senha = txtSenha.getText();
-
-        // Validação exigida no trabalho (mínimo de 13 dígitos)
-        if (!SegurancaSenha.isSenhaValida(senha)) {
-            mostrarAlerta("Erro", "A senha deve ter no mínimo 13 caracteres!");
-            return;
+    public boolean autenticar(String login, String senha) {
+        if (login == null || login.trim().isEmpty() || senha == null || senha.trim().isEmpty()) {
+            mostrarAlerta(Alert.AlertType.WARNING, "Aviso", "Preencha todos os campos!");
+            return false;
         }
 
-        // Criptografa a senha antes de mandar para o banco (DAO)
         String senhaCriptografada = SegurancaSenha.criptografar(senha);
 
-        mostrarAlerta("Sucesso", "Usuário cadastrado com sucesso!");
+        try {
+            UsuarioDAO dao = new UsuarioDAO();
+            boolean valido = dao.autenticar(login, senhaCriptografada);
+            
+            if (!valido) {
+                mostrarAlerta(Alert.AlertType.ERROR, "Erro de Autenticacao", "Login ou senha invalidos!");
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Erro", "Erro ao conectar: " + e.getMessage());
+            return false;
+        }
     }
 
-    private void mostrarAlerta(String titulo, String mensagem) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensagem) {
+        Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensagem);

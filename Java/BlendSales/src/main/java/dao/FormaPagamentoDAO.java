@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class FormaPagamentoDAO {
 
     public void salvar(FormaPagamento formaPagamento) {
-        String sql = "INSERT INTO `forma pagamento` (descricao) VALUES (?)";
+        String sql = "INSERT INTO forma_pagamento (descricao) VALUES (?)";
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

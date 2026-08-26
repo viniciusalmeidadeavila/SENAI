@@ -1,9 +1,10 @@
-package dao; // ou package database;
+package dao;
 
-import database.Conexao; // Usa a sua classe de conexão
+import database.Conexao;
 import models.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UsuarioDAO {
@@ -20,7 +21,22 @@ public class UsuarioDAO {
             stmt.execute();
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao salvar usuário no banco: " + e.getMessage(), e);
+            throw new RuntimeException("Erro ao salvar usuario no banco: " + e.getMessage(), e);
+        }
+    }
+
+    public boolean autenticar(String login, String senhaCriptografada) {
+        String sql = "SELECT id FROM usuario WHERE login = ? AND senha = ?";
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, login);
+            stmt.setString(2, senhaCriptografada);
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao autenticar usuario: " + e.getMessage(), e);
         }
     }
 }

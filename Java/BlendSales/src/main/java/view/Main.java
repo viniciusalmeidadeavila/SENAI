@@ -7,8 +7,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        HomePage tela = new HomePage();
-        tela.iniciar(primaryStage);
+        LoginView login = new LoginView();
+        login.iniciar(primaryStage);
     }
 
     public static void main(String[] args) {
