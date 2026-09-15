@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1{
+  color: aqua;
+}
+
+h1 strong{
+  color: white;
+}
+
+.containerNavegacao {
+  background-color: rgb(2, 73, 109);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+  color: #ffffff;
+  font-size: 26px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.menuNavegacao {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  list-style-type: none;
+}
+
+.menuNavegacao a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.menuNavegacao a:hover{
+  color: #b3b0b0;
+}
+
+img{
+  width: 100%;
+  height: 500px;
+}
+
+h2{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+
+.container-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 10px;
+}
+
+.card {
+  width: 280px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card h3 {
+  color: rgb(2, 73, 109);
+  margin: 12px 0 5px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card .preco {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(2, 73, 109);
+  margin-bottom: 12px;
+}
+
+.card button {
+  background-color: rgb(2, 73, 109);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card button:hover {
+  background-color: #00b4d8;
+}
