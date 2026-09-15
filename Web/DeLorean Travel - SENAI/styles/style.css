@@ -117,3 +117,30 @@ h3{
 .card button:hover {
   background-color: #00b4d8;
 }
+
+footer {
+  background-color: rgb(2, 73, 109);
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.sobre{
+  padding: 20px;
+  text-align: center;
+}
+
+.viagens{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.servicos{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
