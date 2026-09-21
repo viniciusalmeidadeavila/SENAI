@@ -144,3 +144,121 @@ footer {
   gap: 20px;
   padding: 30px;
 }
+
+.container-servicos{
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-servicos{
+  background-color: rgb(2, 73, 109);
+  width: 300px;
+  border-radius: 80px;
+  color:white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-servicos:hover{
+  background-color: rgb(0, 99, 148);
+}
+
+form {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-secao {
+  font-size: 18px;
+  color: rgb(2, 73, 109);
+  width: 100%;
+  border-bottom: 2px solid rgb(2, 73, 109);
+
+}
+
+.titulo-campo {
+  margin-top: 10px;
+  font-weight: 500;
+  color: F
+}
+
+.campo-texto {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.campo-select {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.container-opcao {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.opcao-radio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.opcao-radio label {
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+}
+
+.container-botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-enviar {
+  background-color: rgb(2, 73, 109);
+  color: #fff;
+}
+
+.btn-enviar:hover {
+  background-color: rgb(1, 52, 78);
+}
+
+.btn-limpar {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-limpar:hover {
+  background-color: #d0d0d0;
+}

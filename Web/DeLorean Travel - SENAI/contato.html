@@ -20,5 +20,94 @@
     <br>
     <h2>Contato</h2>
     <h3>Entre em Contato conosco para mais informações!</h3>
+    <form action="">
+        <p class="titulo-secao">Seus Dados</p>
+
+        <label for="nome" class="titulo-campo">Nome completo:</label>
+        <input type="text" name="nome" placeholder="Escreva seu nome aqui" id="nome" class="campo-texto" required>
+
+        <label for="email" class="titulo-campo">E-mail:</label>
+        <input type="email" name="email" placeholder="Escreva seu email aqui" id="email" class="campo-texto" required>
+
+        <label for="telefone" class="titulo-campo">Telefone:</label>
+        <input type="tel" name="telefone" placeholder="Seu número: (99) 99999-9999" id="telefone" class="campo-texto">
+
+        <label for="idade" class="titulo-campo">Idade:</label>
+        <input type="number" name="idade" placeholder="Informe sua Idade" id="idade" class="campo-texto">
+
+        <p class="titulo-campo">Como você avalia sua experiência no site?</p>
+        <div class="container-opcao">
+            <div class="opcao-radio">
+                <input type="radio" name="avaliacao" id="MTsatisfeito" value="muito-satisfeito">
+                <label for="MTsatisfeito">Muito Satisfeito</label>
+            </div>
+            <div class="opcao-radio">
+                <input type="radio" name="avaliacao" id="satisfeito" value="satisfeito">
+                <label for="satisfeito">Satisfeito</label>
+            </div>
+            <div class="opcao-radio">
+                <input type="radio" name="avaliacao" id="neutro" value="neutro">
+                <label for="neutro">Neutro</label>
+            </div>
+            <div class="opcao-radio">
+                <input type="radio" name="avaliacao" id="insatisfeito" value="insatisfeito">
+                <label for="insatisfeito">Insatisfeito</label>
+            </div>
+            <div class="opcao-radio">
+                <input type="radio" name="avaliacao" id="MTinsatisfeito" value="muito-insatisfeito">
+                <label for="MTinsatisfeito">Muito Insatisfeito</label>
+            </div>
+        </div>
+
+        <label for="como-conheceu" class="titulo-campo">Como conheceu a empresa?</label>
+        <select name="como_conheceu" id="como-conheceu" class="campo-select">
+            <option value="" disabled selected>Selecione uma opção...</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="google">Google</option>
+            <option value="amigos">Indicação de amigos</option>
+            <option value="youtube">YouTube</option>
+            <option value="outro">Outro</option>
+        </select>
+
+        <label for="servico" class="titulo-campo">Qual serviço você utilizou?</label>
+        <select name="servico" id="servico" class="campo-select" required>
+            <option value="" disabled selected>Selecione um serviço</option>
+            <option value="consultoria-ti">Viagem para o passado</option>
+            <option value="desenvolvimento-web">Viagem para o futuro</option>
+            <option value="suporte-cloud">Viagem para monumento histórico</option>
+            <option value="marketing-digital">Viagem para futuro distante</option>
+        </select>
+
+        <p class="titulo-campo">Você recomendaria nossa empresa para outras pessoas?</p>
+        <div class="container-opcao">
+            <div class="opcao-radio">
+                <input type="radio" name="recomendacao" id="rec-sim" value="sim" required>
+                <label for="rec-sim">Sim</label>
+            </div>
+            <div class="opcao-radio">
+                <input type="radio" name="recomendacao" id="rec-talvez" value="talvez">
+                <label for="rec-talvez">Talvez</label>
+            </div>
+            <div class="opcao-radio">
+                <input type="radio" name="recomendacao" id="rec-nao" value="nao">
+                <label for="rec-nao">Não</label>
+            </div>
+        </div>
+
+        <label for="comentarios" class="titulo-campo">Conte-nos o que podemos melhorar:</label>
+        <textarea id="comentarios" name="comentarios" placeholder="Escreva sua opinião ou sugestão aqui..." class="campo-texto"></textarea>
+
+        <label for="data-uso" class="titulo-campo">Data de utilização do serviço:</label>
+        <input type="date" id="data-uso" name="data_uso" class="campo-texto" required>
+
+        <div class="container-botoes">
+            <button type="submit" class="btn btn-enviar">Enviar avaliação</button>
+            <button type="reset" class="btn btn-limpar">Limpar formulário</button>
+        </div>
+    </form>
+    <footer>
+        <p>2026 DeLorean Travel. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
