@@ -1,0 +1,12 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(2, 3, 90);
+    padding: 20px;
+    height: 50px;
+    
+    img{
+        width: 200px;
+    }
+}

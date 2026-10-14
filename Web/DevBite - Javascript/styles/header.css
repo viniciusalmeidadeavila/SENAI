@@ -1,0 +1,30 @@
+header{
+    display: flex;
+    align-items: center;
+    background-color: rgb(2, 3, 90);
+    justify-content: space-between;
+    padding: 10px;
+    height: 100px;
+    img{
+        height: 200px;
+    }
+}
+
+header ul{
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+
+    li{
+        font-size: 20px;
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover{
+            color: rgb(219, 217, 217);
+        }
+    }
+}
