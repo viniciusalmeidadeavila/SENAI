@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBite - Admin</title>
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/admin.css">
+</head>
+<body>
+    <header>
+        <img src="./img/logo.png" alt="logo">
+        <ul class="cabecalho">
+            <li><a href="./index.html">Cardápio</a></li>
+            <li><a href="./checkout.html">Meu Carrinho</a></li>
+            <li><a href="./admin.html">Área Restrita</a></li>
+        </ul>
+    </header>
+    <h1>Painel de Administração</h1>
+    <h2>Bem-vindo ao painel de administração do DevBite. Aqui você pode gerenciar os produtos e pedidos.</h2>
+    <div class="cadastrarProduto">
+        <form action="" class="formulario">
+            <h3 class="txt-cadastrarNovo">Cadastrar Novo Produto</h3>
+            <label for="nome">Nome do Produto:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite o nome do produto" required>
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="burguer">Burguer</option>
+                <option value="bebida">Bebida</option>
+                <option value="sobremesa">Sobremesa</option>
+            </select>
+            <label for="preco">Preço:</label>
+            <input type="number" name="preco" id="preco" placeholder="Digite o preço do produto" required>
+            <label for="imagem">URL da Imagem:</label>
+            <input type="text" name="imagem" id="imagem" placeholder="Digite a URL da imagem do produto" required>
+            <button type="submit">Cadastrar Produto</button>
+        </form>
+    </div>
+    <hr>
+    <div class="pedidosRecentes">
+        <h3>Pedidos Recentes</h3>
+        <div class="pedidos">
+            <div class="pedido">
+                <p>Pedido #001</p>
+                <p>Cliente: João Silva</p>
+                <p>Total: R$ 89,90</p>
+                <p>Status: Em preparo</p>
+            </div>
+            <div class="pedido">
+                <p>Pedido #002</p>
+                <p>Cliente: Maria Oliveira</p>
+                <p>Total: R$ 49,90</p>
+                <p>Status: Entregue</p>
+            </div>
+
+            <div class="pedido">
+                <p>Pedido #003</p>
+                <p>Cliente: Carlos Souza</p>
+                <p>Total: R$ 29,90</p>
+                <p>Status: Cancelado</p>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <img src="./img/logo.png" alt="">
+        <p>Desenvolvido por Vinicius Almeida</p>
+    </footer>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        h1, h2, h3, p {
+            color: white;
+        }
+    </style>
+</body>
+</html>

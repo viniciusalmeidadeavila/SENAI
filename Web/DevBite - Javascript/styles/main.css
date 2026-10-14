@@ -1,0 +1,56 @@
+main{
+    h1{
+        text-align: center;
+        color: white;
+    }
+    
+    .categorias{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        list-style-type: none;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-size: 20px;
+    }
+
+    .cards{
+        display: flex;
+        gap: 50px;
+        margin: 30px;
+        flex-wrap: wrap;
+        
+
+        .card{
+            background-color: rgb(4, 1, 110);
+            border-radius: 20px;
+            padding: 20px;
+
+            .categoria{
+                background-color: rgb(2, 169, 187);
+                width: 100px;
+                text-align: center;
+                border-radius: 30px;
+                border: 2px solid black;
+            }
+
+            img{
+                height: 200px;
+                width: 200px;
+            }
+
+            button{
+                background-color: aqua;
+                height: 30px;
+                width: 200px;
+                border-radius: 20px;
+                cursor: pointer;
+                color: rgb(7, 7, 7);
+            }
+
+            button:hover{
+                background-color: rgb(3, 197, 197);
+            }
+        }
+    }
+}
